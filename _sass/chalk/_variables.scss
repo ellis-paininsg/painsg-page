@@ -25,8 +25,8 @@ $black: #000;
 $gray-darkest: #121111;
 $gray-darker: #393636;
 $gray-dark: #615b5b;
-$gray: #888181;
-$gray-light: #ada8a8;
+$gray: #252525; // Chalk's was #888181
+$gray-light: #252525; // Chalk's was #ada8a8
 $gray-lighter: #d2cfcf;
 $gray-lightest: #ebeaea;
 $white: #fff;
@@ -37,14 +37,14 @@ $white: #fff;
 $base-font-color: $gray-dark;
 $base-accent-color: $gray-dark;
 $base-accent-highlighted-color: $gray-darker;
-$base-border-color: #dcdada; // darker than Chalk's default so dividers show on the paper texture
+$base-border-color: #b0b0b0; // all borders and divider lines
 
-$body-background: #f2f2f2; // average tone of paper-texture.webp, shown while it loads
+$body-background: #dcdad9; // average tone of paper-texture.webp, shown while it loads
 $header-logo-color: $black;
 $header-link-color: $gray-darker;
 $header-link-color-hover: $gray-darkest;
 $article-header-title-color: $gray-darkest;
-$article-header-description-color: $gray-dark;
+$article-header-description-color: #252525; // standfirsts (story headers and cards)
 $article-post-titles-color: $gray-darkest;
 $article-footer-color: $gray-light;
 $article-footer-link-color: $gray-dark;

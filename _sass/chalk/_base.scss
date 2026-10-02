@@ -170,7 +170,8 @@ figcaption {
   text-align: center;
 }
 
+// Highlighted text: dark text on mustard yellow (white is hard to read on it).
 ::selection {
-  color: $white;
-  background-color: $gray-darkest;
+  color: $gray-darkest;
+  background-color: #ecb21e;
 }

@@ -144,6 +144,77 @@
   }
 }
 
+// Text size toggle on its own line, for pages without a header (e.g. About).
+.page-tools {
+  margin-bottom: 30px;
+}
+
+// …and directly under a page title with no standfirst (e.g. Copyright).
+.article-header h1 + .article-list-footer {
+  margin-top: 12px;
+}
+
+// Text size toggle (stories, About, Copyright). Sizes apply to the body text.
+:root[data-text-size="small"] { --article-font-size: 16px; }
+:root[data-text-size="large"] { --article-font-size: 21px; }
+:root[data-text-size="x-large"] { --article-font-size: 24px; }
+
+// Byline row in page headers: the text size control sits at the right end.
+.article-header .article-list-footer,
+.page-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 8px;
+}
+
+// Text size control: − / Aa / +, 30px tall, bold. "Aa" grows with the step.
+.article-list-footer .text-size {
+  display: inline-flex;
+  margin-left: auto;
+  align-items: stretch;
+  height: 30px;
+  vertical-align: middle;
+  background: rgba($white, .55); // same as the cards
+  border: 1.5px solid $base-border-color;
+  border-radius: 999px;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    padding: 0 8px;
+    font-family: $link-font;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+    color: $article-footer-color;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    transition: color $base-transition-speed linear;
+    &:hover:not(:disabled) { color: $gray-darkest; }
+    &:disabled {
+      cursor: default;
+      opacity: .3;
+    }
+    &:focus-visible {
+      outline: 1px solid $gray-darkest;
+      outline-offset: -2px;
+      border-radius: 999px;
+    }
+  }
+  .text-size-current {
+    min-width: 42px;
+    border-right: 1.5px solid $base-border-color;
+    border-left: 1.5px solid $base-border-color;
+  }
+  &[data-step="1"] .text-size-current { font-size: 11px; }
+  &[data-step="2"] .text-size-current { font-size: 13px; }
+  &[data-step="3"] .text-size-current { font-size: 15px; }
+  &[data-step="4"] .text-size-current { font-size: 17px; }
+}
+
 .article-list-divider {
   margin: 0 15px;
 }
@@ -178,6 +249,7 @@
 
 .article-content {
   display: block;
+  font-size: var(--article-font-size, #{$base-font-size});
   color: $gray-darker;
   p,
   ul,
@@ -279,7 +351,7 @@
 
 @media all and (min-width: 1240px) {
   .article-content .figure-pain-by-the-numbers {
-    width: 45%;
+    width: 40%;
   }
 }
 
@@ -421,7 +493,9 @@
   grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
   gap: 32px;
   align-items: start;
+  // The photo sits centred against the text beside it (equal space above and below).
   figure {
+    align-self: center;
     margin: 0;
   }
   h2 {

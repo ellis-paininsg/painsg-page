@@ -44,17 +44,11 @@ And as more patients suffer from chronic pain, these healthcare professionals ha
 
 ## A management issue
 
-<aside class="further-reading" aria-label="Further reading">
-<span class="article-next-label">Further reading</span>
-{% assign further = site.stories | where: "url", "/mind-your-body/" | first %}
-{% include story-card.html story=further image=further.image compact=true description="Pain is almost always an emotional experience. Here's how psychology can help" %}
-</aside>
+Yet, changing how patients are treated is a challenge — given a top-down approach to healthcare in Singapore.
 
 <figure class="figure-jut figure-jut-left figure-pain-by-the-numbers">
   <img src="{{ '/assets/images/pain-by-the-numbers.webp' | relative_url }}" alt="Pain by the numbers. Estimates of the number of people with chronic pain in Singapore vary: 8.7 percent in a 2009 study; 14 percent of those aged 40 to 59 in a 2016 study; and 20 percent of the global population is estimated to have chronic pain. 95 percent of Singaporeans have experienced body pain. A rising number of chronic pain sufferers are seeking help at restructured hospitals: Singapore General Hospital saw 6,000 patients in 2015 and 8,000 in 2017; NUH 2,000 and 2,500; Changi General Hospital 700 and 1,200." width="540" height="2000" class="zooming">
 </figure>
-
-Yet, changing how patients are treated is a challenge — given a top-down approach to healthcare in Singapore.
 
 A study of 15 local pain doctors, pain nurses and physiotherapists investigating treatment delivery and potential treatment barriers, found that pain management services were given a low priority by higher management, and that there were major barriers to effective pain management.
 
@@ -69,6 +63,12 @@ Supplemental treatment methods are not subsidised by the government.
 Any change, however, has to come from the top, she adds. "To have an overhaul of our system and to have a bit more buy-in from the top, that will open the floodgates for more people, more patients to come forward to see through treatment and actually see a better outcome."
 
 But major barriers — combined with mistaken perceptions, both in sufferers and health professionals, have cost sufferers more.
+
+<aside class="further-reading" aria-label="Further reading">
+<span class="article-next-label">Further reading</span>
+{% assign further = site.stories | where: "url", "/mind-your-body/" | first %}
+{% include story-card.html story=further image=further.image compact=true description="Pain is almost always an emotional experience. Here's how psychology can help" %}
+</aside>
 
 Ivy Li, who suffers from a slipped disc in her lower spine, says that at times doctors thought that her pain was all in her mind.
 

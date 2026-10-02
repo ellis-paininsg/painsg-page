@@ -50,6 +50,18 @@
     text-decoration: none;
     &:hover { color: $gray-darkest; }
   }
+  // Links inside footer sentences are underlined so they read as links.
+  p a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  margin: 0 auto 20px;
 }
 
 .footer-links {

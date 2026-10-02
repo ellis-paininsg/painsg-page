@@ -1,0 +1,9 @@
+{%- comment -%}
+  Text size control: − / Aa / +. "Aa" is drawn at a size matching the current
+  step and cycles through all four sizes when clicked (assets/js/application.js).
+{%- endcomment -%}
+<div class="text-size" role="group" aria-label="Text size">
+  <button type="button" class="text-size-down" data-text-size-change="-1" aria-label="Smaller text">&minus;</button>
+  <button type="button" class="text-size-current" data-text-size-change="cycle" aria-label="Text size: default. Change text size">Aa</button>
+  <button type="button" class="text-size-up" data-text-size-change="1" aria-label="Larger text">+</button>
+</div>

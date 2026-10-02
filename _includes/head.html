@@ -1,5 +1,8 @@
 <head>
   <meta charset="utf-8">
+  <script>
+    try { var s = localStorage.getItem("textSize"); if (s) document.documentElement.dataset.textSize = s; } catch (e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% if page.title and page.url != "/" %}
     <title>{{ page.title }} | {{ site.name }}</title>
