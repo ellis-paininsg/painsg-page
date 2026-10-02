@@ -1,9 +1,15 @@
 <nav class="header-nav {% if site.scrollappear_enabled %}scrollappear{% endif %}">
   <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">
-    <img src="{{ '/assets/images/banners/header.webp' | relative_url }}" alt="{{ site.name }}" width="244" height="100">
+    <img src="{{ '/assets/images/banners/header.webp' | relative_url }}" alt="{{ site.name }}" width="366" height="150">
+    <span class="header-tagline">{{ site.tagline }}</span>
   </a>
+  {%- comment -%} Links come from _data/navigation.yml {%- endcomment %}
   <ul class="header-links">
-    <li><a href="{{ '/#stories' | relative_url }}">Stories</a></li>
-    <li><a href="{{ '/about-the-author/' | relative_url }}">About</a></li>
+    {%- for link in site.data.navigation %}
+    <li><a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+    {%- if link.break_after %}
+    <li class="header-links-break" role="presentation"></li>
+    {%- endif %}
+    {%- endfor %}
   </ul>
 </nav>

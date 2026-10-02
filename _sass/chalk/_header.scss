@@ -4,56 +4,79 @@
 
 .header-nav {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 75px 0 20px;
+  gap: 24px;
+  padding: 60px 0 24px;
   border-bottom: 1px solid $base-border-color;
 }
 
 .header-logo {
-  display: inline-block;
-  font-family: $headline-font;
-  letter-spacing: $headline-letter-spacing;
-  font-size: 36px;
-  font-style: italic;
-  font-weight: 700;
-  color: $header-logo-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
-  &:hover { color: $header-logo-color; }
   img {
     display: block;
     width: auto;
-    height: 100px;
+    height: 150px;
   }
 }
 
+.header-tagline {
+  margin-top: 8px;
+  font-family: $link-font;
+  font-size: 13px;
+  letter-spacing: .1em;
+  text-transform: lowercase; // matches .home-tagline
+  color: $gray;
+}
+
+// Every page listed, centred and wrapping onto as many lines as needed.
 .header-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 28px;
   padding: 0;
   margin: 0;
   list-style: none;
-  li {
-    display: inline-block;
-    margin-left: 24px;
-    &:first-child { margin-left: 0; }
-    a {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: $header-link-color;
-      &:hover { color: $header-link-color-hover; }
+  a {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .05em;
+    line-height: 1.6;
+    text-decoration: none;
+    color: $gray-darkest;
+    &:hover,
+    &[aria-current="page"] {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
     }
   }
 }
 
+// Forced line break between links (see break_after in _data/navigation.yml).
+.header-links-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
 @include breakpoint(extra-small) {
+  .header-logo img {
+    height: 120px;
+  }
+  .header-links-break {
+    display: none;
+  }
   .header-nav {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
+    padding-top: 40px;
   }
   .header-links {
-    margin-top: 8px;
+    gap: 2px 18px;
+    a {
+      font-size: 14px;
+    }
   }
 }

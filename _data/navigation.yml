@@ -1,0 +1,23 @@
+# Links in the menu at the top of every page except the home page.
+# Same list as the original Squarespace site's navigation.
+# break_after: true starts a new line after that link (ignored on phones).
+- title: Pain in Singapore
+  url: /pain-in-singapore/
+- title: Diagnosing pain
+  url: /diagnosing-pain/
+- title: Working with sufferers
+  url: /working-with-sufferers/
+  break_after: true
+- title: Labour pains
+  url: /labour-pains/
+- title: Invisible suffering
+  url: /invisible-suffering/
+- title: Killing painkillers
+  url: /killing-painkillers/
+- title: An alternative route
+  url: /an-alternative-route/
+  break_after: true
+- title: Compassion, the way forward
+  url: /compassion-the-way-forward/
+- title: About
+  url: /about-the-author/
