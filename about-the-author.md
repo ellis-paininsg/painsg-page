@@ -15,7 +15,7 @@ hide_title: true
 
 Ellis Ng is a journalist and community advocate. This project was created when she was a final-year journalism student from the Wee Kim Wee School of Communication and Information.
 
-After a friend was diagnosed with fibromyalgia, they realised just how little chronic pain was discussed in Singapore. Ellis hopes that this project will help those who suffer find that they are not alone.
+After a friend was diagnosed with fibromyalgia, she realised just how little chronic pain was discussed in Singapore. Ellis hopes that this project will help those who suffer find that they are not alone.
 
 [ellis-island.sg](https://ellis-island.sg)
 
