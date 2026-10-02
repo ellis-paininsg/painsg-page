@@ -11,6 +11,16 @@ author: Ellis Ng
 url: https://paininsingapore.info
 baseurl: ""
 lang: en
+timezone: Asia/Singapore
+
+# Social sharing (link previews on Facebook, X, WhatsApp, LinkedIn, iMessage…)
+share_image: /assets/images/share.jpg # 1200x630 JPG, used for every page
+share_image_alt: >-
+  The word "Pain" in large white italic letters above an illustration of a
+  woman holding the back of her neck, her spine and shoulder bones glowing
+  through her skin
+published_date: 2018-04-14 # stories' publish date, for article:published_time
+twitter_username: # e.g. paininsg (no @); leave blank if there isn't one
 
 # Theme settings (ported from Chalk by Nielsen Ramon — https://github.com/nielsenramon/chalk)
 
