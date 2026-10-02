@@ -295,6 +295,21 @@
   }
 }
 
+// Pull quotes float right at half the column width, like the side figures.
+.article-content blockquote {
+  float: right;
+  width: 50%;
+  margin: 6px 0 20px 28px;
+}
+
+@include breakpoint(small) {
+  .article-content blockquote {
+    float: none;
+    width: 100%;
+    margin: 0 0 30px;
+  }
+}
+
 // Tip cards (e.g. /support-pain/)
 // =============================================================================
 
