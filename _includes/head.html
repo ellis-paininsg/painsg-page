@@ -1,0 +1,31 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.title and page.url != "/" %}
+    <title>{{ page.title }} | {{ site.name }}</title>
+  {% else %}
+    <title>{{ site.name }} | {{ site.tagline }}</title>
+  {% endif %}
+  {% assign description = page.description | default: site.description | strip_newlines | escape %}
+  <meta name="description" content="{{ description }}">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/images/painfavicon.png' | relative_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <meta property="og:title" content="{{ page.title | default: site.name | escape }}">
+  <meta property="og:type" content="{% if page.collection == 'stories' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  {% assign og_image = page.image | default: page.thumb | default: "eln-img-9323.webp" %}
+  <meta property="og:image" content="{{ '/assets/images/' | append: og_image | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..700;1,300..700&family=Raleway:wght@400;500;600;700&display=swap">
+  {% if site.typekit_id %}
+    <link rel="stylesheet" href="https://use.typekit.net/{{ site.typekit_id }}.css">
+  {% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>

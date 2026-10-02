@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<section class="home-intro {% if site.scrollappear_enabled %}scrollappear{% endif %}">
+  <img class="home-banner" src="{{ '/assets/images/banner.webp' | relative_url }}" alt="{{ site.name }}">
+  <p class="home-tagline">{{ site.tagline }}</p>
+
+  <figure class="article-lead">
+    <img src="{{ '/assets/images/home-header.webp' | relative_url }}" alt="The back of an acupuncture model, marked with meridian lines and acupoints" width="1000" height="562">
+  </figure>
+
+  <div class="article-content">
+    <h2>Pain is an integral part of our existence.</h2>
+
+    <p>Think of the coarse gravel that scrapes your knees when you fall on asphalt; the accidental paper cut; the headache after a night of drink. Discomfort tells us when damage occurs, or informs us of urges, like hunger and thirst. It is a primordial part of us.</p>
+
+    <p>But when the way our bodies perceive damage goes wrong, it can be unbearable, silent, and lonely.</p>
+
+    <p>Nearly 9 percent of all Singaporeans suffer from chronic pain according to a 2009 study; the number rises to one in five if you only consider those aged 60 and above. And 95 percent of 500 Singaporeans surveyed for the 2017 GSK Global Pain Index say they have suffered from body pain.</p>
+
+    <p>Below, you&rsquo;ll find a series of stories that will discuss different aspects of chronic pain &mdash; about the things that loom in the background of chronic pain sufferers, and the impact pain has had on their lives.</p>
+
+    <p class="home-question">Why has something so common been so misunderstood?</p>
+  </div>
+</section>
+
+<ul class="story-cards" id="stories">
+  {% assign stories = site.stories | sort: "order" %}
+  {% for story in stories %}
+    <li class="{% if site.scrollappear_enabled %}scrollappear{% endif %}">
+      {% include story-card.html story=story image=story.thumb %}
+    </li>
+  {% endfor %}
+</ul>

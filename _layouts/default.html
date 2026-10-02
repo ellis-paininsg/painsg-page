@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+{% include head.html %}
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        {% unless page.url == "/" %}{% include navigation.html %}{% endunless %}
+        {{ content }}
+        {% include footer.html %}
+      </div>
+    </div>
+  </main>
+  {% include javascripts.html %}
+</body>
+</html>

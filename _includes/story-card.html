@@ -1,0 +1,37 @@
+{% comment %}
+  A linked card for a story.
+    story:       the story document (required)
+    image:       image filename in assets/images/ (uses its thumbs/ copies); a grey placeholder if blank
+    description: optional text to show instead of the story's description
+    compact:     true for the smaller card with a square thumbnail on the left
+                 (Up next, Further reading)
+    title:       optional text to show instead of the story's title
+    hide_reading_time: true to leave out the "x minute read" line (e.g. for a non-story page)
+    reverse:     true to mirror a compact card: thumbnail on the right, text right-aligned,
+                 arrow pointing left (used for "Previous")
+{% endcomment %}
+{%- assign card_story = include.story -%}
+<a class="story-card{% if include.compact %} story-card-compact{% endif %}{% if include.reverse %} story-card-reverse{% endif %}" href="{{ card_story.url | relative_url }}">
+  {%- if include.compact and include.image %}
+  <img class="story-card-image" src="{{ '/assets/images/thumbs/square/' | append: include.image | relative_url }}" alt="" width="300" height="300" loading="lazy">
+  {%- elsif include.image %}
+  {%- assign card_300 = '/assets/images/thumbs/300/' | append: include.image | relative_url %}
+  {%- assign card_600 = '/assets/images/thumbs/600/' | append: include.image | relative_url %}
+  <img class="story-card-image" src="{{ card_600 }}" srcset="{{ card_300 }} 300w, {{ card_600 }} 600w" sizes="(max-width: 520px) calc(100vw - 82px), 618px" alt="" width="600" height="450" loading="lazy">
+  {%- else %}
+  <div class="story-card-image story-card-placeholder" aria-hidden="true"></div>
+  {%- endif %}
+  <div class="story-card-body">
+    {%- if include.reverse %}
+    <h5>{% include arrow-right.svg %} {{ include.title | default: card_story.title }}</h5>
+    {%- else %}
+    <h5>{{ include.title | default: card_story.title }} {% include arrow-right.svg %}</h5>
+    {%- endif %}
+    <p>{{ include.description | default: card_story.description }}</p>
+    {%- unless include.hide_reading_time %}
+    <div class="article-list-footer">
+      <span>{% include reading-time.html content=card_story.content %}</span>
+    </div>
+    {%- endunless %}
+  </div>
+</a>

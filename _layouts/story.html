@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<article class="article {% if site.scrollappear_enabled %}scrollappear{% endif %}">
+  <header class="article-header">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.description }}</p>
+    <div class="article-list-footer">
+      <span>By {{ site.author }}</span>
+      <span class="article-list-divider">-</span>
+      <span>{% include reading-time.html content=content %}</span>
+    </div>
+  </header>
+
+  {% if page.image %}
+    <figure class="article-lead">
+      <img src="{{ '/assets/images/' | append: page.image | relative_url }}" alt="{{ page.image_alt | escape }}">
+      {% if page.image_caption %}<figcaption>{{ page.image_caption | markdownify | remove: '<p>' | remove: '</p>' }}</figcaption>{% endif %}
+    </figure>
+  {% elsif page.image_caption %}
+    {% comment %} Lead image "{{ page.image_missing }}" is missing from assets/images {% endcomment %}
+    <p class="article-lead-caption">{{ page.image_caption }}</p>
+  {% endif %}
+
+  <div class="article-content">
+    {{ content }}
+  </div>
+
+  {%- comment -%} Previous = the story before this one in reading order (home page order). {%- endcomment -%}
+  {% assign prev_order = page.order | minus: 1 %}
+  {% assign prev = site.stories | where: "order", prev_order | first %}
+  {% if page.up_next %}
+    {% assign next_url = "/" | append: page.up_next | append: "/" %}
+    {% assign next = site.stories | where: "url", next_url | first %}
+  {% endif %}
+  {% if prev or next %}
+    <nav class="article-next" aria-label="More stories">
+      {% if prev %}
+        <div class="article-prev-item">
+          <span class="article-next-label">Previous</span>
+          {% include story-card.html story=prev image=prev.image compact=true reverse=true %}
+        </div>
+      {% endif %}
+      {% if next %}
+        <div class="article-next-item">
+          <span class="article-next-label">Up next</span>
+          {% include story-card.html story=next image=next.image compact=true %}
+        </div>
+      {% endif %}
+    </nav>
+  {% endif %}
+</article>

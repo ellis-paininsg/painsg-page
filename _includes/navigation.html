@@ -1,0 +1,9 @@
+<nav class="header-nav {% if site.scrollappear_enabled %}scrollappear{% endif %}">
+  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">
+    <img src="{{ '/assets/images/banners/header.webp' | relative_url }}" alt="{{ site.name }}" width="244" height="100">
+  </a>
+  <ul class="header-links">
+    <li><a href="{{ '/#stories' | relative_url }}">Stories</a></li>
+    <li><a href="{{ '/about-the-author/' | relative_url }}">About</a></li>
+  </ul>
+</nav>

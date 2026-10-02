@@ -1,0 +1,59 @@
+// =============================================================================
+// Header
+// =============================================================================
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 75px 0 20px;
+  border-bottom: 1px solid $base-border-color;
+}
+
+.header-logo {
+  display: inline-block;
+  font-family: $headline-font;
+  letter-spacing: $headline-letter-spacing;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 700;
+  color: $header-logo-color;
+  text-decoration: none;
+  &:hover { color: $header-logo-color; }
+  img {
+    display: block;
+    width: auto;
+    height: 100px;
+  }
+}
+
+.header-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin-left: 24px;
+    &:first-child { margin-left: 0; }
+    a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $header-link-color;
+      &:hover { color: $header-link-color-hover; }
+    }
+  }
+}
+
+@include breakpoint(extra-small) {
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+  .header-links {
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,175 @@
+// =============================================================================
+// Base
+// =============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $base-font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  font-family: $base-font-family;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  background: $body-background;
+}
+
+// One sheet of paper fixed behind the page. A fixed pseudo-element is used
+// instead of `background-attachment: fixed`, which iOS Safari ignores.
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: url("../images/paper-texture.webp") center / cover no-repeat;
+}
+
+// Typography
+// =============================================================================
+
+p {
+  margin: 0;
+  font-weight: $base-font-weight;
+}
+
+b,
+strong {
+  font-weight: $base-font-weight-bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $headline-font;
+  letter-spacing: $headline-letter-spacing;
+  line-height: 1.3;
+  text-rendering: optimizeLegibility;
+  color: $article-post-titles-color;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: $article-header-title-color;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+@include breakpoint(small) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+a {
+  font-family: $link-font;
+  color: $base-accent-color;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color $base-transition-speed linear;
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: $base-accent-highlighted-color;
+  }
+}
+
+// Links inside running copy are sized down slightly so Raleway's larger
+// x-height sits evenly with the serif body text.
+p a,
+li a {
+  font-size: .92em;
+}
+
+svg {
+  transition: fill $base-transition-speed linear;
+}
+
+ul,
+ol {
+  padding-left: 40px;
+  margin: 0;
+}
+
+blockquote {
+  padding: 0 0 4px 20px;
+  margin: 0 0 0 -23px;
+  font-family: $headline-font;
+  letter-spacing: $headline-letter-spacing;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: $gray;
+  border-left: 3px solid $gray-dark;
+}
+
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-bottom: 1px solid $base-border-color;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-family: $link-font;
+  font-size: 13px;
+  line-height: 1.6;
+  color: $gray;
+}
+
+.notfound-wrapper {
+  margin: 100px 0;
+  text-align: center;
+}
+
+::selection {
+  color: $white;
+  background-color: $gray-darkest;
+}

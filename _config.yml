@@ -1,0 +1,57 @@
+# Site settings
+
+name: Pain
+title: Pain
+tagline: A final-year journalism feature by Ellis Ng
+description: >-
+  Nearly one in ten Singaporeans suffer from chronic pain. A series of stories
+  about the things that loom in the background of chronic pain sufferers, and
+  the impact pain has had on their lives.
+author: Ellis Ng
+url: https://paininsingapore.info
+baseurl: ""
+lang: en
+
+# Theme settings (ported from Chalk by Nielsen Ramon — https://github.com/nielsenramon/chalk)
+
+scrollappear_enabled: true # Fade sections in as they scroll into view
+
+# Adobe Fonts (Typekit) kit ID for Essonnes and Kepler Std, e.g. "abc1def".
+# Leave blank to fall back to Inter.
+typekit_id: khc7ibn
+
+# Build settings
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+collections:
+  stories:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: stories
+    values:
+      layout: story
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+plugins:
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+  silence_deprecations: [import]
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .bundle/

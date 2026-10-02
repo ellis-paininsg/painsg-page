@@ -1,0 +1,71 @@
+// =============================================================================
+// Variables (Chalk light theme)
+// =============================================================================
+
+// Typography
+// =============================================================================
+
+// Essonnes and Kepler Std come from Adobe Fonts (set `typekit_id` in
+// _config.yml). Until the kit is added, Inter is used in their place.
+$headline-font: "essonnes-display", "Inter", Georgia, serif;
+$copy-font: "kepler-std", "Inter", Georgia, serif;
+$link-font: "Raleway", "Inter", Helvetica, Arial, sans-serif;
+$headline-letter-spacing: -.05rem;
+
+$sans-serif: $link-font;
+$serif: $headline-font;
+$base-font-family: $copy-font;
+$base-font-weight: 400;
+$base-font-weight-bold: 700;
+
+// Shades of gray (Chalk derives these with lighten(#121111, n))
+// =============================================================================
+
+$black: #000;
+$gray-darkest: #121111;
+$gray-darker: #393636;
+$gray-dark: #615b5b;
+$gray: #888181;
+$gray-light: #ada8a8;
+$gray-lighter: #d2cfcf;
+$gray-lightest: #ebeaea;
+$white: #fff;
+
+// Colors
+// =============================================================================
+
+$base-font-color: $gray-dark;
+$base-accent-color: $gray-dark;
+$base-accent-highlighted-color: $gray-darker;
+$base-border-color: #dcdada; // darker than Chalk's default so dividers show on the paper texture
+
+$body-background: #f2f2f2; // average tone of paper-texture.webp, shown while it loads
+$header-logo-color: $black;
+$header-link-color: $gray-darker;
+$header-link-color-hover: $gray-darkest;
+$article-header-title-color: $gray-darkest;
+$article-header-description-color: $gray-dark;
+$article-post-titles-color: $gray-darkest;
+$article-footer-color: $gray-light;
+$article-footer-link-color: $gray-dark;
+$article-footer-link-color-hover: $gray-darkest;
+
+// Sizes
+// =============================================================================
+
+$columns: 12;
+$max-width: 680px;
+$gutter: 20px;
+$one-column: 8.333333%;
+$negative-gutter: -$gutter;
+
+$base-font-size: 18px;
+$base-line-height: 1.7;
+
+// Effects
+// =============================================================================
+
+$base-transition-speed: .2s;
+
+// Cards (home page story cards, tip cards)
+$card-radius: 20px;
