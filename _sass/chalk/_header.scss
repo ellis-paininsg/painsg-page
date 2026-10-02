@@ -15,11 +15,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   text-decoration: none;
+  // Scales with the screen and keeps its proportions; 367px wide = 150px tall.
   img {
     display: block;
-    width: auto;
-    height: 150px;
+    width: 100%;
+    max-width: 367px;
+    height: auto;
   }
 }
 
@@ -37,7 +40,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4px 28px;
+  gap: 0 28px;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -65,7 +68,7 @@
 
 @include breakpoint(extra-small) {
   .header-logo img {
-    height: 120px;
+    max-width: 293px; // 120px tall
   }
   .header-links-break {
     display: none;
